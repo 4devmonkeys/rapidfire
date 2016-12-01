@@ -3,7 +3,7 @@ module Rapidfire
     before_filter :authenticate_administrator!, except: :index
 
     def index
-      @surveys = Survey.all
+      @surveys = Survey.where company_id: current_company.to_param
     end
 
     def new
