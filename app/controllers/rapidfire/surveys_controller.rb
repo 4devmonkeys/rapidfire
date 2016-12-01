@@ -52,6 +52,7 @@ module Rapidfire
     def survey_params
       if Rails::VERSION::MAJOR >= 4
         params.require(:survey).permit(:name, :introduction)
+                               .merge(company: current_company)
       else
         params[:survey]
       end
