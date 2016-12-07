@@ -8,6 +8,7 @@ module Rapidfire
 
     def new
       @survey = Survey.new
+      @survey.build_questions
     end
 
     def create
