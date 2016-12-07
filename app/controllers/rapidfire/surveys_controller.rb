@@ -8,7 +8,7 @@ module Rapidfire
 
     def new
       @survey = Survey.new
-      @survey.build_questions
+      # @question_form = QuestionForm.new(:survey => @survey)
     end
 
     def create
@@ -51,8 +51,10 @@ module Rapidfire
     private
 
     def survey_params
+      questions_attributes = { questions_attributes: [ :question ] }
       if Rails::VERSION::MAJOR >= 4
-        params.require(:survey).permit(:name, :introduction)
+        params.require(:survey).permit(:name, :introduction,
+                                        questions_attributes )
                                .merge(company: current_company)
       else
         params[:survey]
