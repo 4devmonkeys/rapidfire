@@ -15,7 +15,7 @@ module Rapidfire
       if @survey.save
         create_questions
         respond_to do |format|
-          format.html { redirect_to surveys_path }
+          format.html { redirect_to surveys_path, notice: "Pesquisa criada com sucesso!" }
           format.js
         end
       else
