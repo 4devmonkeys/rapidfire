@@ -1,4 +1,4 @@
-# inspired by devise and foremApi 
+# inspired by devise and foremApi
 require 'rails/generators'
 
 module Rapidfire
@@ -9,10 +9,9 @@ module Rapidfire
         desc 'Copies default Rapidfire Api views to your application.'
 
         def copy_views
-          # view_directory :attempts
-          # view_directory :answers
+          view_directory :attempts
+          view_directory :answers
           view_directory :surveys
-          # view_directory :questions
         end
 
         protected
